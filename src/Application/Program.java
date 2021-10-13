@@ -33,9 +33,9 @@ public class Program {
 
 
            // for (String voto : votacao.keySet()) {
-                System.out.println("Alex Blue " + votacao.get("Alex Blue"));
-                System.out.println("Bob Brown " + votacao.get("Bob Brown"));
-                System.out.println("Maria Green " + votacao.get("Maria Green"));
+                System.out.println("Alex Blue " + votacao.get("Alex Blue"));  // falta somar os votos//
+                System.out.println("Bob Brown " + votacao.get("Bob Brown"));  // falta somar os votos//
+                System.out.println("Maria Green " + votacao.get("Maria Green"));  // falta somar os votos//
            // }
 
 
