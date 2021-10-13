@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -18,7 +18,7 @@ public class Program {
         int i = 0;
         String[] object = null;
 
-        Map<String, Double> votacao = new HashMap<>();
+        Map<String, Integer> votacao = new LinkedHashMap<>();
 
 
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
@@ -27,7 +27,16 @@ public class Program {
 
             while (line != null) {
                 object = line.split(";");
-                votacao.put(object[0] , Double.parseDouble(object[1]));
+                String nome = object[0];
+                int votos = Integer.parseInt(object[1]);
+
+                if (votacao.containsKey(nome)) {
+                    int novovoto = votacao.get(nome);
+                    votacao.put(nome,votos+novovoto);
+                }else{
+                    votacao.put(nome,votos);
+                }
+
                 line = br.readLine();
             }
 
