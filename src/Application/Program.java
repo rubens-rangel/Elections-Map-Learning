@@ -32,31 +32,20 @@ public class Program {
 
                 if (votacao.containsKey(nome)) {
                     int novovoto = votacao.get(nome);
-                    votacao.put(nome,votos+novovoto);
-                }else{
-                    votacao.put(nome,votos);
+                    votacao.put(nome, votos + novovoto);
+                } else {
+                    votacao.put(nome, votos);
                 }
-
                 line = br.readLine();
             }
-
-
-           // for (String voto : votacao.keySet()) {
-                System.out.println("Alex Blue " + votacao.get("Alex Blue"));  // refazer para estrutura for
-                System.out.println("Bob Brown " + votacao.get("Bob Brown"));
-                System.out.println("Maria Green " + votacao.get("Maria Green"));
-           // }
-
-
+            for (String key : votacao.keySet()) {
+                System.out.println(key + " " + votacao.get(key));
+            }
         } catch (IOException e) {
             System.out.println("File not found or can't be read");
-
         } catch (NoSuchElementException b) {
-
             System.out.println("!!!!ERROR!!!!");
-
         } finally {
-
             if (sc != null) {
                 sc.close();
             }
